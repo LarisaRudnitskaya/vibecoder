@@ -155,31 +155,48 @@ a:hover{color:var(--ink)}
 .brand{
   display:flex;
   align-items:center;
-  gap:12px;
-  min-width: 220px;
+  gap:11px;
+  min-width: 0;
 }
 .brand-mark{
-  width:14px;
-  height:14px;
-  border-radius:4px;
-  background:
-    radial-gradient(circle at 30% 35%, rgba(255,255,255,.95), rgba(255,255,255,0) 55%),
-    linear-gradient(135deg, rgba(214,255,106,.95), rgba(122,214,255,.7));
-  box-shadow: 0 0 0 1px rgba(255,255,255,.14), 0 10px 34px rgba(0,0,0,.45);
-  transform: rotate(10deg);
+  flex:0 0 auto;
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  box-shadow: 0 0 12px rgba(214,255,106,.35);
 }
-.brand-text{display:flex; flex-direction:column; gap:1px}
-.brand-title{
+.brand-text{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-width:0;
+  white-space:nowrap;
+  line-height:1;
+}
+.brand-name{
   font-family:var(--serif);
-  font-weight:700;
-  letter-spacing:.02em;
-  font-size:18px;
-  line-height:1.05;
+  font-weight:600;
+  font-size:clamp(15px, 1.35vw, 18px);
+  letter-spacing:.04em;
+  color:var(--ink);
 }
-.brand-subtitle{
-  font-size:12px;
-  color:var(--muted);
-  opacity:.9;
+.brand-sep{
+  flex:0 0 auto;
+  width:1px;
+  height:13px;
+  background: linear-gradient(180deg, transparent, rgba(255,255,255,.28), transparent);
+}
+.brand-tag{
+  font-family:var(--sans);
+  font-size:11px;
+  font-weight:500;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
 }
 
 .nav{
@@ -978,7 +995,10 @@ a:hover{color:var(--ink)}
   }
   .site-header.is-open .nav{display:flex}
   .cards{grid-template-columns: 1fr}
-  .brand-subtitle{display:none}
+  .brand-text{gap:8px}
+  .brand-name{font-size:14px; letter-spacing:.03em}
+  .brand-tag{font-size:9px; letter-spacing:.14em}
+  .brand-sep{height:11px}
   .header-inner{position:relative}
 }
 
